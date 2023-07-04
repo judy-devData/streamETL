@@ -83,6 +83,40 @@ docker exec streametl-jobmanager-1 flink list
 ```
 Results
 --- 
+inject data in the dev.users table. you can refer to [sql_statements](sql_statements.sql) 
+1. you can review the results by connecting to mongo db :
+```
+docker exec -it streametl-mongodb-1 mongosh --host localhost --port 27017 -u dev_data -p Abcdevpoc --authenticationDatabase admin
+
+```
+2. check the collection in the my_db database
+
+```
+use my_db;
+db.DataAggregated.find();
+```
+3. example of  the output you would get (date and number of insertions).
+```
+ {
+    _id: ObjectId("64a3e6f24ea1a24cdaa16fa7"),
+    date: '2023-07-04T09:31:30.051113Z',
+    count: 50
+  },
+
+```
+Monitoring 
+---
+1. The mongodb exporter expose several metrics of mongo. The metrics are available on http://localhost:9216/metrics
+2. These metrics are scraped by promotheus by adding the mongodb-exporter as a target. Check [promotheus-config](promotheus.yamll)
+3. You can check the metrics or run you own queries on promotheus http://localhost:9090/
+   ```
+   mongodb_top_insert_count
+   mongodb_top_insert_count{collection="DataAggregated", database="my_db"}
+   ```
+4. connect to grafana on http://localhost:3000/
+
+Dashboard  
+---
 
 
 
