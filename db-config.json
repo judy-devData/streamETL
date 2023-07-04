@@ -1,0 +1,23 @@
+{
+  "name": "streamdb-connector",
+  "config": {
+    "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
+    "tasks.max": "1",
+    "database.hostname": "postgres",
+    "database.server.name": "streamdb-connector",
+    "plugin.name": "pgoutput",
+    "slot.name": "debezium",
+    "database.port": "5432",
+    "database.user": "dev_data",
+    "database.password": "Abcdevpoc",
+    "database.dbname" : "dev_data",
+    "topic.prefix": "DataChange",
+    "schema.include.list":"dev",
+    "table.include.list": "dev.users",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable": "false"
+
+
+
+  }
+}
