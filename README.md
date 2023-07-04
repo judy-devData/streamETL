@@ -118,5 +118,10 @@ Monitoring
 Dashboard  
 ---
 
-
-
+1. Prepare your dashboard by connecting to the http://localhost:3000/
+2. Go to plugins --> prometheus (pre installed)--> add as a data source
+   ```
+    Prometheus server URL:http://172.17.0.1:9090 
+   
+   ```
+3. save and test 
