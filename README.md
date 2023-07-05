@@ -119,9 +119,5 @@ Dashboard
 ---
 
 1. Prepare your dashboard by connecting to the http://localhost:3000/
-2. Go to plugins --> prometheus (pre installed)--> add as a data source
-   ```
-    Prometheus server URL:http://172.17.0.1:9090 
-   
-   ```
-3. save and test 
+2. Go to dashboards --> add a new dashboard --> import [mongo_dashboard](dashboard_mongo.json) 
+3. Select promotheus as the data source for this dashboard. configure the promotheus url for the data source as follow http://172.17.0.1:9090
