@@ -1,6 +1,6 @@
 # streamETL
 
-Example project of a streaming pipeline in a docker environnement. the docker environnemnt includes: 
+Example project of a streaming pipeline in a docker environment. the docker environment includes: 
 - Postgres instance
 - Kafka instance
 - Zookeeper instance 
